@@ -1,0 +1,48 @@
+replicaCount: 1
+image:
+  repository: asia-northeast3-docker.pkg.dev/engaged-proxy-460415-d1/highfive-registry/board-service
+  tag: "latest"
+  pullPolicy: IfNotPresent
+
+fullnameOverride: "board-service"
+
+service:
+  port: 8082
+
+dependency:
+  api_gateway:
+    service_name: "api-gateway"
+    port: 8080
+  user_service:
+    service_name: "user-service"
+    port: 8081
+  mongodb:
+    service_name: "mongodb"
+    port: 27017
+  redis:
+    service_name: "redis"
+    port: 6379
+
+resources:
+  requests:
+    cpu: "200m"
+    memory: "512Mi"
+  limits:
+    cpu: "500m"
+    memory: "1Gi"
+
+livenessProbe:
+  httpGet:
+    path: /actuator/health
+    port: http
+  initialDelaySeconds: 150
+  periodSeconds: 5
+  failureThreshold: 3
+
+readinessProbe:
+  httpGet:
+    path: /actuator/health
+    port: http
+  initialDelaySeconds: 150
+  periodSeconds: 5
+  failureThreshold: 3

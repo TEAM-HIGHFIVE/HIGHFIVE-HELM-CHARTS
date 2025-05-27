@@ -1,0 +1,19 @@
+replicaCount: 1
+image:
+  repository: openzipkin/zipkin
+  tag: 2.23
+  pullPolicy: IfNotPresent
+
+fullnameOverride: "zipkin"
+
+service:
+  port: 9411
+  targetPort: 9411
+
+resources:
+  requests:
+    cpu: "200m"
+    memory: "512Mi"
+  limits:
+    cpu: "500m"
+    memory: "1Gi"
