@@ -1,14 +1,11 @@
 replicaCount: 1
 image:
   repository: asia-northeast3-docker.pkg.dev/engaged-proxy-460415-d1/highfive-registry/welfare-service
-  tag: latest
+  tag: 20e84bf9b2c4e7f465fe275e21c370940523d486-15281460156
   pullPolicy: IfNotPresent
-
 fullnameOverride: "welfare-service"
-
 service:
   port: 8083
-
 dependency:
   api_gateway:
     service_name: "api-gateway"
@@ -19,8 +16,6 @@ dependency:
   redis:
     service_name: "redis"
     port: 6379
-
-
 resources:
   requests:
     cpu: "200m"
@@ -28,7 +23,6 @@ resources:
   limits:
     cpu: "500m"
     memory: "1Gi"
-
 livenessProbe:
   httpGet:
     path: /actuator/health
@@ -36,7 +30,6 @@ livenessProbe:
   initialDelaySeconds: 150
   periodSeconds: 5
   failureThreshold: 3
-
 readinessProbe:
   httpGet:
     path: /actuator/health
@@ -44,4 +37,3 @@ readinessProbe:
   initialDelaySeconds: 150
   periodSeconds: 5
   failureThreshold: 3
-
