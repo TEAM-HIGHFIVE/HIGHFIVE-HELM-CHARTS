@@ -1,14 +1,11 @@
 replicaCount: 1
 image:
   repository: asia-northeast3-docker.pkg.dev/engaged-proxy-460415-d1/highfive-registry/board-service
-  tag: "latest"
+  tag: "236c0f204a28990d424562ee3386435cc5e7b530-15281394304"
   pullPolicy: IfNotPresent
-
 fullnameOverride: "board-service"
-
 service:
   port: 8082
-
 dependency:
   api_gateway:
     service_name: "api-gateway"
@@ -22,7 +19,6 @@ dependency:
   redis:
     service_name: "redis"
     port: 6379
-
 resources:
   requests:
     cpu: "200m"
@@ -30,7 +26,6 @@ resources:
   limits:
     cpu: "500m"
     memory: "1Gi"
-
 livenessProbe:
   httpGet:
     path: /actuator/health
@@ -38,7 +33,6 @@ livenessProbe:
   initialDelaySeconds: 150
   periodSeconds: 5
   failureThreshold: 3
-
 readinessProbe:
   httpGet:
     path: /actuator/health
