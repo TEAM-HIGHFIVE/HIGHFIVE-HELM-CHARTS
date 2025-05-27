@@ -1,14 +1,11 @@
 replicaCount: 1
 image:
   repository: asia-northeast3-docker.pkg.dev/engaged-proxy-460415-d1/highfive-registry/user-service
-  tag: latest
+  tag: 210589e7509faf194b948b7bf4821248e3a0bc0c-15281611841
   pullPolicy: IfNotPresent
-
 fullnameOverride: "user-service"
-
 service:
   port: 8081
-
 dependency:
   api_gateway:
     service_name: "api-gateway"
@@ -19,7 +16,6 @@ dependency:
   kafka:
     service_name: "kafka"
     port: 9092
-
 resources:
   requests:
     cpu: "200m"
@@ -27,7 +23,6 @@ resources:
   limits:
     cpu: "500m"
     memory: "1Gi"
-
 livenessProbe:
   httpGet:
     path: /actuator/health
@@ -35,7 +30,6 @@ livenessProbe:
   initialDelaySeconds: 200
   periodSeconds: 5
   failureThreshold: 3
-
 readinessProbe:
   httpGet:
     path: /actuator/health
@@ -43,6 +37,5 @@ readinessProbe:
   initialDelaySeconds: 200
   periodSeconds: 5
   failureThreshold: 3
-
 config:
   ACCESS_EXP: "360000"
