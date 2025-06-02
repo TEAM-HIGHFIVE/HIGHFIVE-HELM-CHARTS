@@ -31,11 +31,14 @@ readinessProbe:
   initialDelaySeconds: 100
   periodSeconds: 5
   failureThreshold: 3
+
 ingress:
   enabled: true
-  annotations: {}
+  annotations:
+    kubernetes.io/ingress.class: "gce"
+    networking.gke.io/managed-certificates: "my-cert"
   hosts:
-    - host: ""
+    - host: api.highfive.p-e.kr
       paths:
         - path: /
           pathType: Prefix
