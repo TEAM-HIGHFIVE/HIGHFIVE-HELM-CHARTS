@@ -38,4 +38,4 @@ readinessProbe:
   periodSeconds: 5
   failureThreshold: 3
 config:
-  SPRING_BATCH_JOB_ENABLED: "true"
+  SPRING_BATCH_JOB_ENABLED: "false"
