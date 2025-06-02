@@ -1,7 +1,7 @@
 replicaCount: 1
 image:
   repository: asia-northeast3-docker.pkg.dev/engaged-proxy-460415-d1/highfive-registry/api-gateway
-  tag: "6a96901ca87b6b48ed85331e582eacc173bf7e79-15295532971"
+  tag: "f269408c6fbf7ddfe7f5a3042daee5b8e9e1ca3b-15390330627"
   pullPolicy: IfNotPresent
 fullnameOverride: "api-gateway"
 service:
