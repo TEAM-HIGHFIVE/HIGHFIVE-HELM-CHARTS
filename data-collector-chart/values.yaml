@@ -1,7 +1,7 @@
 replicaCount: 1
 image:
   repository: asia-northeast3-docker.pkg.dev/engaged-proxy-460415-d1/highfive-registry/data-collector
-  tag: "f548dd4065dc935c6abcdc32ad92e073d8ad8218-15316758677"
+  tag: "db29ab640612532e81e4605ee30da423a364699d-15388007095"
   pullPolicy: IfNotPresent
 fullnameOverride: "data-collector"
 dependency:
