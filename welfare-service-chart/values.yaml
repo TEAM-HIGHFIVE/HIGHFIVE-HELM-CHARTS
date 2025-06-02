@@ -1,7 +1,7 @@
 replicaCount: 1
 image:
   repository: asia-northeast3-docker.pkg.dev/engaged-proxy-460415-d1/highfive-registry/welfare-service
-  tag: 6a96901ca87b6b48ed85331e582eacc173bf7e79-15295532949
+  tag: db29ab640612532e81e4605ee30da423a364699d-15388007098
   pullPolicy: IfNotPresent
 fullnameOverride: "welfare-service"
 service:
