@@ -1,7 +1,7 @@
 replicaCount: 1
 image:
   repository: asia-northeast3-docker.pkg.dev/engaged-proxy-460415-d1/highfive-registry/user-service
-  tag: 220209cda8b278d26f2cb74b42a58a993163403c-15390989435
+  tag: 5886682b8d6213a6b78f1e6bb3fc97e382eb8194-15409249609
   pullPolicy: IfNotPresent
 fullnameOverride: "user-service"
 service:
