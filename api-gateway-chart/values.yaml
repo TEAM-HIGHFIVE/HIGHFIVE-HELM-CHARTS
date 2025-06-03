@@ -36,7 +36,7 @@ ingress:
   enabled: true
   annotations:
     kubernetes.io/ingress.class: "gce"
-    networking.gke.io/managed-certificates: "my-cert"
+    networking.gke.io/managed-certificates: "highfive-cert"
     kubernetes.io/ingress.global-static-ip-name: "highfive-ip"  # 정적 IP 할당
   hosts:
     - host: api.highfive.p-e.kr
