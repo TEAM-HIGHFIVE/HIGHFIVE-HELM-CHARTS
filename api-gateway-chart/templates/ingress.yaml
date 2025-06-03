@@ -8,12 +8,6 @@ metadata:
     {{ $key }}: {{ $value | quote }}
     {{- end }}
 spec:
-  tls:
-    - hosts:
-        {{- range .Values.ingress.hosts }}
-        - {{ .host }}
-        {{- end}}
-      secretName: dummy-secret # 더미값 (없으면 오류)
   rules:
     {{- range .Values.ingress.hosts }}
     - host: {{ .host }}
