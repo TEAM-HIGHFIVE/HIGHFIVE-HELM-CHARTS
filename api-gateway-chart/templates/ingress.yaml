@@ -13,7 +13,6 @@ spec:
         {{- range .Values.ingress.hosts }}
         - {{ .host }}
         {{- end}}
-      secretName: dummy-cert # 더미값 (없으면 오류)
   rules:
     {{- range .Values.ingress.hosts }}
     - host: {{ .host }}
