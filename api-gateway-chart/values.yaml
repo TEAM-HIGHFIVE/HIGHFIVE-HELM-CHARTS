@@ -1,7 +1,7 @@
 replicaCount: 1
 image:
   repository: asia-northeast3-docker.pkg.dev/engaged-proxy-460415-d1/highfive-registry/api-gateway
-  tag: "bcda603fb41b9d99ad00a984ede70613e498f577-15390748119"
+  tag: "42ee171a056c81224896db25ca2dcb4ab40ec856-15409011001"
   pullPolicy: IfNotPresent
 fullnameOverride: "api-gateway"
 service:
@@ -31,13 +31,12 @@ readinessProbe:
   initialDelaySeconds: 100
   periodSeconds: 5
   failureThreshold: 3
-
 ingress:
   enabled: true
   annotations:
     kubernetes.io/ingress.class: "gce"
     networking.gke.io/managed-certificates: "highfive-cert"
-    kubernetes.io/ingress.global-static-ip-name: "highfive-ip"  # 정적 IP 할당
+    kubernetes.io/ingress.global-static-ip-name: "highfive-ip" # 정적 IP 할당
   hosts:
     - host: api.highfive.p-e.kr
       paths:
