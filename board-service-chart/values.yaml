@@ -1,7 +1,7 @@
 replicaCount: 1
 image:
   repository: asia-northeast3-docker.pkg.dev/engaged-proxy-460415-d1/highfive-registry/board-service
-  tag: "6a96901ca87b6b48ed85331e582eacc173bf7e79-15295532948"
+  tag: "b41fd4bf35dda1b39b55930639cf68ab1476111b-15529470124"
   pullPolicy: IfNotPresent
 fullnameOverride: "board-service"
 service:
