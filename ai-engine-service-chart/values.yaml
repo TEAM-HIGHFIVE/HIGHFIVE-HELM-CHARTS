@@ -1,7 +1,7 @@
 replicaCount: 1
 image:
   repository: asia-northeast3-docker.pkg.dev/engaged-proxy-460415-d1/highfive-registry/ai-engine-service
-  tag: "1c98544534ea0b2ccecf3e82d683977cd25ef917-15280216371"
+  tag: "b41fd4bf35dda1b39b55930639cf68ab1476111b-15529470113"
   pullPolicy: IfNotPresent
 fullnameOverride: "ai-engine-service"
 service:
